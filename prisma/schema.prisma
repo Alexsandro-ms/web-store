@@ -26,7 +26,7 @@ model Product {
   slug String
   description String
   basePrice Float
-  imageUrl String
+  imageUrls String[]
   categoryId String
   discountPercent Int @default(0)
   category Category @relation(fields: [categoryId], references: [id])
