@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Categories from "./component/categories"
 import { prismaClient } from "@/lib/prisma"
 import ProductList from "./component/product-list"
@@ -28,7 +27,7 @@ export default async function Home() {
     }
   })
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 py-8">
       <PromoBanner src="/banner-home-01.svg"
         alt="Até 55% de desconto esse mês"
       />
