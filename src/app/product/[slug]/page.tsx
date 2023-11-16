@@ -2,26 +2,42 @@ import { prismaClient } from "@/lib/prisma";
 import ProductImages from "./components/product-images";
 import ProductInfo from "./components/product-info";
 import { computeProductTotalPrice } from "@/helpers/product";
+import ProductList from "@/components/ui/product-list";
 
 interface ProductDetailsPageProps {
-    params: {
-        slug: string
-    }
+  params: {
+    slug: string;
+  };
 }
 
-const ProductDetailsPage = async ({params: {slug}}: ProductDetailsPageProps) => {
-    const product = await prismaClient.product.findFirst({
-        where: {
-            slug: slug
-        }
-    })
+const ProductDetailsPage = async ({
+  params: { slug },
+}: ProductDetailsPageProps) => {
+  const product = await prismaClient.product.findFirst({
+    where: { slug },
+    include: {
+      category: {
+        include: {
+          products: {
+            where: { slug: { not: slug } },
+          },
+        },
+      },
+    },
+  });
 
-    if(!product) return null;
+  if (!product) return null;
 
-    return ( <div className="flex flex-col gap-8">
-        <ProductImages imageUrls={product.imageUrls} name={product.name}/>
-        <ProductInfo product={computeProductTotalPrice(product)}/>
-    </div> );
-}
- 
+  return (
+    <div className="flex flex-col gap-8 pb-8">
+      <ProductImages imageUrls={product.imageUrls} name={product.name} />
+      <ProductInfo product={computeProductTotalPrice(product)} />
+      <div className="flex flex-col">
+        <h3 className="mb-3 px-5 text-lg font-bold">Produtos Recomendados</h3>
+        <ProductList products={product.category.products} />
+      </div>
+    </div>
+  );
+};
+
 export default ProductDetailsPage;
