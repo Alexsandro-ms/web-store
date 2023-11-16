@@ -4,28 +4,18 @@ import ProductList from "./component/product-list"
 import SectionTitle from "./component/section-title"
 import PromoBanner from "./component/promo-banner"
 
+async function getProductsByCategory(categorySlug: string) {
+  return await prismaClient.product.findMany({
+    where: {
+      ...(categorySlug === 'deals' ? { discountPercent: { gt: 0 } } : { category: { slug: categorySlug } })
+    }
+  });
+}
+
 export default async function Home() {
-  const deals = await prismaClient.product.findMany({
-    where: {
-      discountPercent: {
-        gt: 0
-      }
-    }
-  })
-  const keyboards = await prismaClient.product.findMany({
-    where: {
-      category: {
-        slug: "keyboards"
-      }
-    }
-  })
-  const mouses = await prismaClient.product.findMany({
-    where: {
-      category: {
-        slug: "mouses"
-      }
-    }
-  })
+  const deals = await getProductsByCategory('deals');
+  const keyboards = await getProductsByCategory('keyboards');
+  const mouses = await getProductsByCategory('mouses');
   return (
     <div className="flex flex-col gap-8 py-8">
       <PromoBanner src="/banner-home-01.svg"
