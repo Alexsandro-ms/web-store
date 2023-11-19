@@ -13,6 +13,7 @@ interface ICartContext {
   cartBasePrice: number;
   cartTotalDiscount: number;
   handleAddProductToCart: (product: CartProduct) => void;
+  handleDecreaseProductQuantity: (productId: string) => void;
 }
 
 export const CartContext = createContext<ICartContext>({
@@ -21,12 +22,12 @@ export const CartContext = createContext<ICartContext>({
   cartTotalDiscount: 0,
   cartTotalPrice: 0,
   handleAddProductToCart: () => {},
+  handleDecreaseProductQuantity: () => {},
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>([]);
 
-  // Função que lida com a adição de um produto ao carrinho
   const handleAddProductToCart = (product: CartProduct) => {
     // Verifica se o produto já está no carrinho
     const productIsAlreadyCart = products.some(
@@ -57,6 +58,23 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
     setProducts((prev) => [...prev, product]);
   };
 
+  const handleDecreaseProductQuantity = (productId: string) => {
+    setProducts((prev) =>
+      prev
+        .map((cartProduct) => {
+          if (cartProduct.id === productId) {
+            return {
+              ...cartProduct,
+              quantity: cartProduct.quantity - 1,
+            };
+          }
+
+          return cartProduct;
+        })
+        .filter((cartProduct) => cartProduct.quantity > 0),
+    );
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -65,6 +83,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
         cartTotalDiscount: 0,
         cartTotalPrice: 0,
         handleAddProductToCart,
+        handleDecreaseProductQuantity,
       }}
     >
       {children}
