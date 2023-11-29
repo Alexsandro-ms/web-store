@@ -50,38 +50,40 @@ const Cart = () => {
             )}
           </div>
         </ScrollArea>
-      </div>
-      <div className="flex flex-col gap-3">
-        <Separator />
-        <div className="flex items-center justify-between text-xs opacity-75">
-          <p>Subtotal</p>
-          <p>R$ {subtotal.toFixed(2)}</p>
-        </div>
+        {products.length > 0 && (
+          <div className="flex flex-col gap-3">
+            <Separator />
+            <div className="flex items-center justify-between text-xs opacity-75">
+              <p>Subtotal</p>
+              <p>R$ {subtotal.toFixed(2)}</p>
+            </div>
 
-        <Separator />
-        <div className="flex items-center justify-between text-xs opacity-75">
-          <p>Entrega</p>
-          <p className="font-bold uppercase text-primary">Grátis</p>
-        </div>
+            <Separator />
+            <div className="flex items-center justify-between text-xs opacity-75">
+              <p>Entrega</p>
+              <p className="font-bold uppercase text-primary">Grátis</p>
+            </div>
 
-        <Separator />
-        <div className="flex items-center justify-between text-xs opacity-75">
-          <p>Descontos</p>
-          <p>- R$ {totalDiscount.toFixed(2)}</p>
-        </div>
+            <Separator />
+            <div className="flex items-center justify-between text-xs opacity-75">
+              <p>Descontos</p>
+              <p>- R$ {totalDiscount.toFixed(2)}</p>
+            </div>
 
-        <Separator />
-        <div className="flex items-center justify-between text-sm font-bold">
-          <p>Total</p>
-          <p>R$ {total.toFixed(2)}</p>
-        </div>
-        <Button
-          className="mt-7 font-bold uppercase"
-          onClick={handleFinishPurchaseClick}
-          disabled={products.length > 0 ? false : true}
-        >
-          Finalizar compra
-        </Button>
+            <Separator />
+            <div className="flex items-center justify-between text-sm font-bold">
+              <p>Total</p>
+              <p>R$ {total.toFixed(2)}</p>
+            </div>
+            <Button
+              className="mt-7 font-bold uppercase"
+              onClick={handleFinishPurchaseClick}
+              disabled={products.length > 0 ? false : true}
+            >
+              Finalizar compra
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
