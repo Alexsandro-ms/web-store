@@ -13,8 +13,7 @@ const PromoBanner = ({
 }: PromoBannerProps) => {
   return (
     <div className="relative">
-      {/* Imagem para celular */}
-      <div className="lg:hidden">
+      <div className="md:hidden">
         {srcMobile && (
           <Image
             width={0}
@@ -30,8 +29,7 @@ const PromoBanner = ({
           />
         )}
       </div>
-      {/* Imagem para desktop */}
-      <div className="hidden lg:block">
+      <div className="hidden md:block">
         {srcDesktop && (
           <Image
             width={0}
