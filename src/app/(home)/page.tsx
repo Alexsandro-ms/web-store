@@ -1,8 +1,6 @@
-import Categories from "./component/categories";
 import { prismaClient } from "@/lib/prisma";
-import ProductList from "../../components/ui/product-list";
-import SectionTitle from "../../components/ui/section-title";
-import PromoBanner from "./component/promo-banner";
+import MobileScreen from "./component/screen/mobile-screen";
+import DesktopScreen from "./component/screen/desktop-screen";
 
 async function getProductsByCategory(categorySlug: string) {
   return await prismaClient.product.findMany({
@@ -19,33 +17,12 @@ export default async function Home() {
   const keyboards = await getProductsByCategory("keyboards");
   const mouses = await getProductsByCategory("mouses");
   return (
-    <div className="flex flex-col gap-8 py-8">
-      <PromoBanner
-        src="/banner-home-01.svg"
-        alt="Até 55% de desconto esse mês"
-      />
-      <div className="px-5">
-        <Categories />
+    <div>
+      <div className="hidden md:block">
+        <DesktopScreen deals={deals} keyboards={keyboards} mouses={mouses} />
       </div>
-      <div>
-        <SectionTitle>Ofertas</SectionTitle>
-        <ProductList products={deals} />
-      </div>
-      <PromoBanner
-        src="/banner-home-02.svg"
-        alt="Até 55% de desconto em teclados"
-      />
-      <div>
-        <SectionTitle>Teclados</SectionTitle>
-        <ProductList products={keyboards} />
-      </div>
-      <PromoBanner
-        src="/banner-home-03.svg"
-        alt="Até 55% de desconto em mouses"
-      />
-      <div>
-        <SectionTitle>Mouses</SectionTitle>
-        <ProductList products={mouses} />
+      <div className="md:hidden">
+        <MobileScreen deals={deals} keyboards={keyboards} mouses={mouses} />
       </div>
     </div>
   );
