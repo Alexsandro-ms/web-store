@@ -85,10 +85,17 @@ const Header = () => {
                 </Button>
               </SheetClose>
             </Link>
-            <Button variant={"outline"} className="w-full justify-start gap-2">
-              <PercentIcon size={16} />
-              Ofertas
-            </Button>
+            <Link href={"/deals"}>
+              <SheetClose asChild>
+                <Button
+                  variant={"outline"}
+                  className="w-full justify-start gap-2"
+                >
+                  <PercentIcon size={16} />
+                  Ofertas
+                </Button>
+              </SheetClose>
+            </Link>
             <SheetClose asChild>
               <Link href={"/catalog"}>
                 <Button
