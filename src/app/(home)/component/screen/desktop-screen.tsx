@@ -16,6 +16,7 @@ const DesktopScreen = ({ deals, keyboards, mouses }: MobileScreenProps) => {
       <PromoBanner
         srcDesktop={"/banner-home-01-desktop.svg"}
         alt="Até 55% de desconto esse mês"
+        priority
       />
       <div className="flex flex-col gap-8 px-10">
         <div>
