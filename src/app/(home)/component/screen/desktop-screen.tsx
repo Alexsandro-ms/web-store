@@ -12,7 +12,7 @@ interface MobileScreenProps {
 
 const DesktopScreen = ({ deals, keyboards, mouses }: MobileScreenProps) => {
   return (
-    <div className="flex flex-col gap-8 py-8">
+    <div className="flex flex-col gap-8 pb-8">
       <PromoBanner
         srcDesktop={"/banner-home-01-desktop.svg"}
         alt="Até 55% de desconto esse mês"

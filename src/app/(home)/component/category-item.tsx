@@ -13,7 +13,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
     <Link href={`/category/${category.slug}`}>
       <Badge
         variant={"outline"}
-        className="flex items-center justify-center gap-2 py-3 sm:h-12 sm:rounded-xl sm:px-10"
+        className="flex items-center justify-center gap-2 py-3 sm:h-12 sm:rounded-xl sm:px-10 text-[#ccc] border-[#ccc]"
       >
         {categoryIcon[category.slug as keyof typeof categoryIcon]}
         <span className="text-xs font-bold">{category.name}</span>
