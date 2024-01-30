@@ -31,18 +31,14 @@ const DesktopScreen = ({ deals, keyboards, mouses }: MobileScreenProps) => {
             srcDesktop="/banner-home-02-desktop.svg"
             alt="Até 55% de desconto em mouses"
           />
-          <PromoBanner
-            srcDesktop="/banner-home-03-desktop.svg"
-            alt="Até 20% de desconto em fones"
-          />
-        </div>
+         </div>
         <div className="w-full">
           <SectionTitle>Teclados</SectionTitle>
           <ProductList products={keyboards} />
         </div>
         <div>
           <PromoBanner
-            srcDesktop="/banner-home-04-desktop.svg"
+            srcDesktop="/banner-home-03-desktop.svg"
             alt="Frete grátis para todo o Brasil"
           />
         </div>
