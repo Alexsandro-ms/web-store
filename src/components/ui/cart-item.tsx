@@ -4,6 +4,7 @@ import { CartContext, CartProduct } from "@/provider/cart";
 import Image from "next/image";
 import { Button } from "./button";
 import { ArrowLeft, ArrowRight, TrashIcon } from "lucide-react";
+import { toast } from "sonner";
 
 interface CartItemProps {
   product: CartProduct;

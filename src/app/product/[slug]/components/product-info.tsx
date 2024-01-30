@@ -5,6 +5,7 @@ import DiscountBadge from "@/components/ui/discount-badge";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { CartContext } from "@/provider/cart";
 import { ArrowLeft, ArrowRight, TruckIcon } from "lucide-react";
+import { toast } from "sonner";
 
 interface ProductInfoProps {
   product: ProductWithTotalPrice;
@@ -23,13 +24,14 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
   const handleAddProductToCartClick = () => {
     handleAddProductToCart({ ...product, quantity });
+    toast("O Item foi adicionado ao carrinho")
   };
 
   return (
-    <div className="flex flex-col bg-accent p-10 px-5 lg:max-h-[670px] lg:max-w-[472px] lg:justify-evenly lg:rounded-xl">
+    <div className="flex flex-col bg-white p-10 px-5 lg:max-h-[670px] lg:max-w-[472px] lg:justify-evenly lg:rounded-xl">
       <h2 className="text-lg">{product.name}</h2>
       <div className="flex items-center gap-1">
-        <h1 className="gap-2 text-xl font-bold">
+        <h1 className="gap-2 text-xl font-bold text-primary">
           R$ {product.totalPrice.toFixed(2)}
         </h1>
         {product.discountPercent > 0 && (
@@ -69,7 +71,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
       >
         Adicionar ao carrinho
       </Button>
-      <div className="mt-5 flex items-center justify-between rounded-lg px-5 py-2 md:bg-accent lg:bg-gray-950">
+      <div className="mt-5 flex items-center justify-between rounded-lg px-5 py-2 bg-[#fafafa]">
         <div className="flex items-center gap-3">
           <TruckIcon />
           <div className="flex flex-col">

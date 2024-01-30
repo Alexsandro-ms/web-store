@@ -16,7 +16,7 @@ const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
 
   return (
     <>
-      <div className="flex h-[380px] items-center justify-center bg-accent lg:h-[670px] lg:w-[90%] lg:max-w-[736px] lg:rounded-xl">
+      <div className="flex h-[380px] items-center justify-center bg-[#fafafa] lg:h-[670px] lg:w-[90%] lg:max-w-[736px] lg:rounded-xl">
         <Image
           src={currentImage}
           alt={name}
@@ -33,7 +33,7 @@ const ProductImages = ({ imageUrls, name }: ProductImagesProps) => {
         {imageUrls.map((imageUrl) => (
           <button
             key={imageUrl}
-            className={`flex items-center justify-center rounded-lg bg-accent md:h-[100px] lg:h-[77px] lg:w-[77px] lg:bg-black
+            className={`flex items-center justify-center rounded-lg bg-[#fafafa] md:h-[100px] lg:h-[77px] lg:w-[77px] lg:bg-white
                 ${
                   imageUrl === currentImage &&
                   "border-2 border-solid border-primary"
