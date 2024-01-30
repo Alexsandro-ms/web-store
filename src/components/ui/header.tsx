@@ -97,12 +97,14 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent className="flex flex-col gap-5 border-none bg-white">
             <div className="relative ml-0 flex w-full gap-3">
-              <Avatar className="max-h-[32px] w-full max-w-[32px]">
+              {data?.user && (
+                <Avatar className="max-h-[32px] w-full max-w-[32px]">
                 <AvatarFallback>
                   {data?.user?.name?.[0]?.toUpperCase()}
                 </AvatarFallback>
                 {data?.user?.image && <AvatarImage src={data.user.image} />}
               </Avatar>
+              )}
               <div className="flex flex-col ">
                 <h1 className="text-sm">
                   {data?.user?.name && data?.user.name.length > 15
