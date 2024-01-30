@@ -64,7 +64,7 @@ const Header = () => {
               <ShoppingBag size={24} />
             </Button>
           </SheetTrigger>
-          <SheetContent className="bg-white">
+          <SheetContent className="bg-white  border-none">
             <Cart />
           </SheetContent>
         </Sheet>
