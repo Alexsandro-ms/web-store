@@ -12,7 +12,7 @@ interface MobileScreenProps {
 
 const MobileScreen = ({ deals, keyboards, mouses }: MobileScreenProps) => {
   return (
-    <div className="flex flex-col gap-8 py-8">
+    <div className="flex flex-col gap-8">
       <PromoBanner
         srcMobile={"/banner-home-01.svg"}
         alt="Até 55% de desconto esse mês"
@@ -24,18 +24,22 @@ const MobileScreen = ({ deals, keyboards, mouses }: MobileScreenProps) => {
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
+      <div className="px-2">
       <PromoBanner
         srcMobile="/banner-home-02.svg"
-        alt="Até 55% de desconto em teclados"
+        alt="Desconto de até 35% em mouses"
       />
+      </div>
       <div>
         <SectionTitle>Teclados</SectionTitle>
         <ProductList products={keyboards} />
       </div>
+      <div className="px-2">
       <PromoBanner
         srcMobile="/banner-home-03.svg"
         alt="Até 55% de desconto em mouses"
-      />
+        />
+        </div>
       <div>
         <SectionTitle>Mouses</SectionTitle>
         <ProductList products={mouses} />

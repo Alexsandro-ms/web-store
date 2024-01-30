@@ -18,7 +18,7 @@ const PromoBanner = ({
           <Image
             width={0}
             height={0}
-            className="h-auto w-full px-5"
+            className="h-auto w-full"
             sizes="100vw"
             alt={alt}
             src={srcMobile}

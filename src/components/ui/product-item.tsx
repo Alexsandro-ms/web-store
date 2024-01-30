@@ -12,7 +12,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link href={`/product/${product.slug}`}>
       <div className="flex flex-col gap-4">
-        <div className="relative flex h-[170px] w-full items-center justify-center rounded-lg bg-accent">
+        <div className="relative flex h-[170px] w-full items-center justify-center rounded-lg bg-[#fff]">
           <Image
             alt={product.name}
             src={product.imageUrls[0]}
@@ -37,7 +37,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           <div className="flex items-center gap-2">
             {product.discountPercent > 0 ? (
               <>
-                <p className="font-semibold ">
+                <p className="font-semibold text-primary">
                   R$ {product.totalPrice.toFixed(2)}
                 </p>
                 <p className="overflow-hidden text-ellipsis text-xs line-through opacity-75">
