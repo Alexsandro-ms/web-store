@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const FooterComponent = () => {
   return (
-    <footer className="flex bg-accent opacity-95">
+    <footer className="flex bg-black opacity-95">
       <div className="md: flex flex-col p-5">
        <Link href="/">
         <Image
@@ -36,7 +36,7 @@ const FooterComponent = () => {
           </Link>
         </div>
       </div>
-      <div className="hidden md:flex md:text-[#ccc] md:justify-between md:items-stretch md:w-full md:pt-8 md:pl-2 md:text-xs">
+      <div className="hidden md:flex md:text-[#ccc] md:justify-between md:items-stretch md:w-full md:pt-8 md:pl-8 md:text-xs">
   <div className="flex flex-col flex-1 gap-1">
     <Link href={"/a"} className="text-white text-base mb-2">Oferta</Link>
     <p>Lorem ipsum</p>
