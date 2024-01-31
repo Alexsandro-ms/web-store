@@ -1,4 +1,8 @@
+<div align="center">
+   
 ![Tela Inicial](public/screenshots/cover.svg)
+
+</div>
 
 # Web Store
 
@@ -19,6 +23,31 @@ Web store é um e-commerce feito com [Prisma](https://www.prisma.io/), [NextJS](
 O Website foi criado com o intuito de desenvolver um e-commerce totalmente funcional com next, prisma e typescript. Além das tecnológias citadas, foi usado Shadcn e o OAUTH do google para login.
 
 ### Capturas de Tela
+
+<details>
+<summary>Clique para expandir as capturas de tela versão Desktop</summary>
+
+### Tela Inicial
+
+![Tela Inicial](public/screenshots/desktop/screenshot-home.png)
+
+### Página de Categoria
+
+![Página de categorias](public/screenshots/desktop/screenshot-category.png)
+
+### Página de Detalhes do Produto
+
+![Página de Detalhes do Produto](public/screenshots/desktop/screenshot-product-details.png)
+
+### Carrinho de Compras
+
+![Carrinho de Compras](public/screenshots/desktop/screenshot-cart.png)
+
+### Pagamento Stripe
+
+![Pagamento Stripe](public/screenshots/desktop/screenshot-payment-with-stripe.png)
+   
+</details>
 
 <details>
 <summary>Clique para expandir as capturas de tela versão mobile</summary>
