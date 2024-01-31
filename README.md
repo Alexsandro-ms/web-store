@@ -1,6 +1,8 @@
+![Tela Inicial](public/screenshots/cover.svg)
+
 # Web Store
 
-Web store é um e-commerce feito com [Prisma](https://www.prisma.io/), [NextJS](https://nextjs.org/) e [Typescript](https://www.typescriptlang.org/).
+Web store é um e-commerce feito com [Prisma](https://www.prisma.io/), [NextJS](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/) e [Stripe](https://stripe.com/br).
 
 ## Índice
 
@@ -10,8 +12,6 @@ Web store é um e-commerce feito com [Prisma](https://www.prisma.io/), [NextJS](
 - [Configuração](#configuração)
 - [Iniciando Servidor](#iniciando-servidor)
 - [Uso](#uso) WIP
-- [Contribuição](#contribuição) WIP
-- [Licença](#licença) WIP
 - [Contato](#contato)
 
 ## Sobre o Projeto
@@ -25,27 +25,27 @@ O Website foi criado com o intuito de desenvolver um e-commerce totalmente funci
 
 ### Tela Inicial
 
-![Tela Inicial](public/screenshots/mobile-tela-inicial.png)
+![Tela Inicial](public/screenshots/mobile/screenshot-mobile-home.png)
 
 ### Tela de Menu
 
-![Tela de Menu](public/screenshots/menu.png)
+![Tela de Menu](public/screenshots/mobile/screenshot-mobile-menu.png)
 
 ### Página de Categoria
 
-![Página de categorias](public/screenshots/mobile-tela-categorias.png)
-
-### Página de Produtos
-
-![Página de Produtos](public/screenshots/mobile-tela-produtos.png)
+![Página de categorias](public/screenshots/mobile/screenshot-mobile-category.png)
 
 ### Página de Detalhes do Produto
 
-![Página de Detalhes do Produto](public/screenshots/mobile-tela-produtos.png)
+![Página de Detalhes do Produto](public/screenshots/mobile/screenshot-mobile-product-details.png)
 
 ### Carrinho de Compras
 
-![Carrinho de Compras](screenshots/carrinho-de-compras.png)
+![Carrinho de Compras](public/screenshots/mobile/screenshot-mobile-cart.png)
+
+### Pagamento Stripe
+
+![Pagamento Stripe](public/screenshots/mobile/screenshot-mobile-payment-with-stripe.png)
 
 </details>
 
